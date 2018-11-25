@@ -1,0 +1,5 @@
+# Ignore everything in this directory
+*
+# Except this file
+log4j.properties
+!.gitignore
