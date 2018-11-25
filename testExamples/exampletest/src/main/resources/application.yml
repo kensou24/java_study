@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.11.103:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
+    username: wangjun
+    password: wangjun
+
+  rabbitmq:
+    addresses: 192.168.11.103
+    port: 5672
+    password: wangjun
+    username: wangjun
