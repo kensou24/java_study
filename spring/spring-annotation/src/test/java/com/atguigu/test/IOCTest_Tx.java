@@ -13,7 +13,7 @@ import com.atguigu.config.MainConifgOfAutowired;
 import com.atguigu.dao.BookDao;
 import com.atguigu.service.BookService;
 import com.atguigu.tx.TxConfig;
-import com.atguigu.tx.UserService;
+import com.atguigu.tx.UserService2;
 
 public class IOCTest_Tx {
 	
@@ -22,7 +22,7 @@ public class IOCTest_Tx {
 		AnnotationConfigApplicationContext applicationContext = 
 				new AnnotationConfigApplicationContext(TxConfig.class);
 	
-		UserService userService = applicationContext.getBean(UserService.class);
+		UserService2 userService = applicationContext.getBean(UserService2.class);
 		
 		userService.insertUser();
 		applicationContext.close();

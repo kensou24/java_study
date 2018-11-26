@@ -1,5 +1,6 @@
 package com.atguigu.dao;
 
+
 import org.springframework.stereotype.Repository;
 
 //名字默认是类名首字母小写
@@ -20,9 +21,5 @@ public class BookDao {
 	public String toString() {
 		return "BookDao [lable=" + lable + "]";
 	}
-	
-	
-	
-	
 
 }

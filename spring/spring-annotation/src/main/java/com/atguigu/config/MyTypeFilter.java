@@ -18,6 +18,7 @@ public class MyTypeFilter implements TypeFilter {
 	@Override
 	public boolean match(MetadataReader metadataReader, MetadataReaderFactory metadataReaderFactory)
 			throws IOException {
+
 		// TODO Auto-generated method stub
 		//获取当前类注解的信息
 		AnnotationMetadata annotationMetadata = metadataReader.getAnnotationMetadata();
@@ -31,7 +32,7 @@ public class MyTypeFilter implements TypeFilter {
 		if(className.contains("er")){
 			return true;
 		}
-		return false;
+		return true;
 	}
 
 }
