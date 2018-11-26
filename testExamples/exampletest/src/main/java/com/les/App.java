@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
-import sun.rmi.runtime.Log;
+//import sun.rmi.runtime.Log;
 
 /**
  * Hello world!
