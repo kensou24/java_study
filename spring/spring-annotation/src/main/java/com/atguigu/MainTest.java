@@ -1,5 +1,6 @@
 package com.atguigu;
 
+import com.atguigu.config.MainConfig2;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -15,7 +16,7 @@ public class MainTest {
 //		Person bean = (Person) applicationContext.getBean("person");
 //		System.out.println(bean);
 		
-		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
+		ApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig2.class);
 		//Person bean = applicationContext.getBean(Person.class);
 		//System.out.println(bean);
 		
