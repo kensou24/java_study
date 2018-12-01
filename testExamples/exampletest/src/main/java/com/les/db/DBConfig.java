@@ -94,7 +94,7 @@ public class DBConfig{
         hibernateJpaVendorAdapter.setDatabase(Database.MYSQL);
         hibernateJpaVendorAdapter.setShowSql(true);
         hibernateJpaVendorAdapter.setGenerateDdl(false);
-        hibernateJpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.MariaDB103Dialect");
+        hibernateJpaVendorAdapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect"); //org.hibernate.dialect.MariaDB103Dialect
         return hibernateJpaVendorAdapter;
     }
 
