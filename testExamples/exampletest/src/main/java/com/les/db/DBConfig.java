@@ -5,6 +5,7 @@ import com.les.db.repository.UserRepositoryInterface;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +14,7 @@ import org.springframework.jdbc.core.JdbcOperations;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
@@ -34,6 +36,7 @@ import java.util.Properties;
  * @CreateDate: 2018/11/28 8:42
  */
 @Configuration
+@EnableAutoConfiguration
 @ComponentScan
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "localContainerEntityManagerFactoryBean")
@@ -62,7 +65,6 @@ public class DBConfig{
         return new JdbcTemplate(dataSource);
     }
 
-
     @Bean("localSessionFactoryBean")
     public LocalSessionFactoryBean localSessionFactoryBean(DataSource dataSource)
     {
@@ -75,6 +77,7 @@ public class DBConfig{
         return localSessionFactoryBean;
     }
 
+
     @Bean
     public PlatformTransactionManager annotationDrivenTransactionManager(LocalSessionFactoryBean localSessionFactoryBean) {
         System.out.println(localSessionFactoryBean);
@@ -82,6 +85,7 @@ public class DBConfig{
         transactionManager.setSessionFactory(localSessionFactoryBean.getObject());
         return transactionManager;
     }
+
 
     @Bean
     public JpaVendorAdapter jpaVendorAdapter()
@@ -102,6 +106,14 @@ public class DBConfig{
         localContainerEntityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
         localContainerEntityManagerFactoryBean.setPackagesToScan(new String[]{"com.les.db.entity"});
         return localContainerEntityManagerFactoryBean;
+    }
+
+    @Bean
+    public JpaTransactionManager jpaTransactionManager(LocalContainerEntityManagerFactoryBean lem)
+    {
+        JpaTransactionManager jpaTransactionManager = new JpaTransactionManager();
+        jpaTransactionManager.setEntityManagerFactory(lem.getObject());
+        return jpaTransactionManager;
     }
 
 

@@ -25,14 +25,12 @@ import java.util.List;
  */
 @Service
 @Slf4j
-@Transactional(rollbackFor = Exception.class)
+@Transactional(transactionManager ="annotationDrivenTransactionManager", rollbackFor = Exception.class) //transactionManager = "jpaTransactionManager",
 public class UserService {
 
     JPAQueryFactory queryFactory;
 
-    @Autowired
-    SpringJpaUserRepository2 springJpaUserRepository2;
-
+    //@PersistenceContext(unitName="localContainerEntityManagerFactoryBean")
     @PersistenceContext(unitName="localSessionFactoryBean")
     private EntityManager entityManager;
 

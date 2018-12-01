@@ -6,6 +6,30 @@ spring:
     url: jdbc:mysql://192.168.11.103:3306/test?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
     username: wangjun
     password: wangjun
+  jpa:
+    # Specify the DBMS
+    #database: ORACLE
+    database: MYSQL
+    # Show or not log for each sql query
+    show-sql: true
+    #open-in-view: true
+    hibernate:
+      # Hibernate ddl auto (create, create-drop, update)
+      ddl-auto: update
+      # Naming strategy
+      #naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      #hibernate5配置
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        # stripped before adding them to the entity manager)
+        #dialect: org.hibernate.dialect.Oracle10gDialect
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        current_session_context_class: org.springframework.orm.hibernate5.SpringSessionContext
+        cache:
+          # 打开二级缓存
+          use_second_level_cache: false
 
   rabbitmq:
     addresses: 192.168.11.103

@@ -31,7 +31,7 @@ public class GeneralObjectHandler {
     public void register(GeneralObject genneralObject)
     {
         int current = atomicInteger.getAndIncrement();
-        if(current%10000 == 0)
+        if(current%50000 == 0)
         {
             log.info(current + ",AnnotationMealEventListener " + Thread.currentThread().getName() + ",@AsynMealEvent" + genneralObject);
         }
