@@ -22,7 +22,7 @@ public class MessageQueueConfigTest {
 
     @Test
     public void getUUID32() {
-        log.info("");
+        log.info("1234");
 
     }
 }
