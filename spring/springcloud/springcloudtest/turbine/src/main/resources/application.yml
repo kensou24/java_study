@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: turbine
+server:
+  port: 14401
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:14001/eureka/,http://peer2:14002/eureka/
+    #是否从服务器获取可用服务清单
+    fetch-registry: true
+    #缓存清单的更新时间
+    registry-fetch-interval-seconds: 10
+
+management:
+  port: 14402
+turbine:
+  app-config: RIBBON-CONSUMER
+  cluster-name-expression: "'default'"
+  combine-host-port: true

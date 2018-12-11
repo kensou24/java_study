@@ -1,0 +1,18 @@
+server:
+  port: 14602
+eureka:
+  instance:
+    #定义服务续约任务的调用时间间隔
+    lease-renewal-interval-in-seconds: 2
+    #定义服务失效的时间
+    lease-expiration-duration-in-seconds: 6
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:14001/eureka/,http://peer2:14002/eureka/
+    #向服务中心注册
+    register-with-eureka: true
+spring:
+  application:
+    name: trace-b
+  zipkin:
+    base-url: http://localhost:14701

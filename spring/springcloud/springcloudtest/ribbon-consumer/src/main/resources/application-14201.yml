@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ribbon-consumer
+server:
+  port: 14201
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:14001/eureka/,http://peer2:14002/eureka/
+    #是否从服务器获取可用服务清单
+    fetch-registry: true
+    #缓存清单的更新时间
+    registry-fetch-interval-seconds: 10

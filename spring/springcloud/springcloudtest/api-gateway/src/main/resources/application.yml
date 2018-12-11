@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: api-gateway
+server:
+  port: 14501
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:14001/eureka/,http://peer2:14002/eureka/
+    #是否从服务器获取可用服务清单
+    fetch-registry: true
+    #缓存清单的更新时间
+    registry-fetch-interval-seconds: 10
+
+##传统配置路由
+zuul:
+  routes:
+    api1:
+      path: /api1/**
+      url: http://localhost:14201/
+    api2:
+      path: /api2/**
+      url: http://localhost:14202/
+
+    ##服务的方式
+    api-1:
+      path: /api-1/**
+      url: RIBBON-CONSUMER
+    api-2:
+      path: /api-2/**
+      url: RIBBON-CONSUMER
