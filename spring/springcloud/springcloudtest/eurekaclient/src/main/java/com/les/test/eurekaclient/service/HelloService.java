@@ -1,6 +1,6 @@
 package com.les.test.eurekaclient.service;
 
-import com.netflix.discovery.converters.Auto;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -8,7 +8,6 @@ import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.xml.ws.Service;
 import java.util.Random;
 
 /**

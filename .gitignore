@@ -387,5 +387,11 @@ typings/
 #DynamoDB Local files 
 .dynamodb/ 
 
+#vscode
+.pref
+.lst
+*target/
+*vscode/
+
 # don't forget this one
 !.gitignore
