@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class RxJavaTest
 {
     /**
-     * Rigorous Test :-)
+     * Rigorous BugTest :-)
      */
     @Test
     public void shouldAnswerWithTrue()

@@ -5,7 +5,7 @@ package com.les.understandingJVM.annotation;
  * @author taomk 2017年7月26日 下午8:35:04
  *
  */
-@Greeting(message="Test" , sayHi="233333")
+@Greeting(message="BugTest" , sayHi="233333")
 public class GeetingAnnotationTest {
 
 	void foo(){
